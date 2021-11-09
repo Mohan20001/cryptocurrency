@@ -1,0 +1,63 @@
+:root{
+    /* breaking  */
+    --mobile-device:480px;
+    --tablete-device:768px;
+    --desktop-device:1200px;
+
+    /* colors */
+    --primery-color:#E6EDBA;
+    --secondery-color:#4B452D;
+    --nutreal-color:#fff;
+    --info:#25C10B;
+    --font:Roboto;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font);
+}
+
+body{
+    background: var(--primery-color);
+    font-size: 15px;
+}
+
+.container{
+    max-width: 80rem;
+    min-width: 300px;
+    margin-top: 64px;
+    margin-inline:auto ;
+    word-wrap: break-word;
+}
+.container h1{
+    font-size: 2.5rem;
+    margin-inline: auto;
+}
+.list-of-coins{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+}
+.list-of-coins .item{
+    height: 60px;
+    background: var(--nutreal-color);
+    color: var(--secondery-color);
+    margin-top: 4px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    text-align: center;
+    text-transform: capitalize;
+    color: var(--secondery-color);
+}
+.list-of-coins .header{
+    background-color: var(--secondery-color);
+    color: var(--nutreal-color);
+}
+.list-of-coins .item span{
+    color: var(--info);
+    font-size: 0.5rem;
+    margin-left: 4px;
+}
