@@ -34,6 +34,7 @@ body{
 .container h1{
     font-size: 2.5rem;
     margin-inline: auto;
+    margin-bottom: 10px;
 }
 .list-of-coins{
     display: grid;
@@ -41,6 +42,7 @@ body{
     grid-template-rows: auto;
 }
 .list-of-coins .item{
+    position: relative;
     height: 60px;
     background: var(--nutreal-color);
     color: var(--secondery-color);
@@ -51,6 +53,14 @@ body{
     text-align: center;
     text-transform: capitalize;
     color: var(--secondery-color);
+    
+}
+.list-of-coins .item div{
+    overflow: hidden;
+}
+.list-of-coins .item img{
+    height: 20px;
+    width: auto;
 }
 .list-of-coins .header{
     background-color: var(--secondery-color);
@@ -60,4 +70,21 @@ body{
     color: var(--info);
     font-size: 0.5rem;
     margin-left: 4px;
+}
+@media (min-width:1020px) {
+    .container h1{
+        font-size:2.5rem ;
+    }
+}
+
+@media ( max-width: 768px) {
+    .container h1{
+        font-size:2rem ;
+        text-align: center;
+    }
+}
+@media ( max-width: 480px) {
+    .container h1{
+        font-size:1.5rem ;
+    }
 }
