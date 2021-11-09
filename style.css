@@ -27,7 +27,7 @@ body{
 .container{
     max-width: 80rem;
     min-width: 300px;
-    margin-top: 64px;
+    margin-top: 10px;
     margin-inline:auto ;
     word-wrap: break-word;
 }
