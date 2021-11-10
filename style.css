@@ -56,12 +56,14 @@ body{
     
 }
 .list-of-coins .item div{
+    position: relative;
     overflow: hidden;
 }
 .list-of-coins .item img{
     height: 20px;
     width: 20px;
-
+ position: absolute;
+ left: 0;
 }
 .list-of-coins .header{
     background-color: var(--secondery-color);

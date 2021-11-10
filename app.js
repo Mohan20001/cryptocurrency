@@ -1,19 +1,54 @@
-var baseUrl='https://api.coinranking.com/v2/coins';
-var proxyUrl='https://cors-anywhere.herokuapp.com/';
-var apiKey='coinranking1fd6c143d8d9f8a6a7902f9d09d4d80faacec1854234e6c3';
 
 
-fetch(`${proxyUrl}${baseUrl}`,{
-    method:"GET",
-    headers:{
-        'Content-Type':'application/json',
-        'x-access-token': `${apiKey}`,
-        'Access-Control-Allow-Origin':'*'
-    }
+fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true')
+.then(res => res.json())
+.then(data => {
+    console.log(data[0]);
+    data.forEach(element => {
+        createComponent(element.market_cap_rank, element.name,Math.ceil(element.market_cap/1000000000), element.current_price, element.price_change_percentage_24h, element.image);
+    });
 })
-.then((res)=>{
-    console.log(res);
-})
-.catch((err)=>{
-    console.log(err);
-});
+.catch(err => console.log(err));
+
+
+function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl) {
+    let ls=document.querySelector('.list-of-coins');
+    
+    let item=document.createElement('div');
+    item.className="item";
+
+    let rank=document.createElement('div');
+    rank.className="rank";
+    rank.innerText=coinRank;
+      
+    let name=document.createElement('div');
+    name.className="name";
+    name.innerText=coinName;
+
+    let imag=document.createElement('img');
+    imag.src=srcUrl;
+    name.appendChild(imag);
+
+    
+    
+
+    let mcap=document.createElement('div');
+    mcap.className="cap";
+    mcap.innerText="$"+coinMcap+"B";
+
+    let price=document.createElement('div');
+    price.className="price";
+    price.innerText="$"+coinPrice;
+
+    let span=document.createElement('span');
+    span.innerText=coinPercentage+"%";
+
+    price.appendChild(span);
+
+    item.appendChild(rank);
+    item.appendChild(name);
+    item.appendChild(mcap);
+    item.appendChild(price);
+
+    ls.appendChild(item);
+}
