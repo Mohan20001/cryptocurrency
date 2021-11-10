@@ -4,14 +4,14 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
 .then(res => res.json())
 .then(data => {
     console.log(data[0]);
-    data.forEach(element => {
+     data.forEach(element => {
         createComponent(element.market_cap_rank, element.name,Math.ceil(element.market_cap/1000000000), element.current_price, element.price_change_percentage_24h, element.image);
     });
 })
 .catch(err => console.log(err));
 
 
-function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl) {
+ function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl) {
     let ls=document.querySelector('.list-of-coins');
     
     let item=document.createElement('div');
