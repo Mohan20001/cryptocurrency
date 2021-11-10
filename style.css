@@ -51,7 +51,6 @@ body{
     margin-top: 4px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    /* grid-template-columns: 60px fr 1fr 2fr; */
     align-items: center;
     text-align: center;
     text-transform: capitalize;
@@ -109,6 +108,7 @@ sub{
     
     }
     .list-of-coins .item{
+    grid-template-columns: 60px 1fr 1fr 1fr;
         font-size: 0.8rem;
     }
 }
