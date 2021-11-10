@@ -1,11 +1,10 @@
 
-
-fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=true')
+fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=inr&order=market_cap_desc&per_page=100&page=1&sparkline=true')
 .then(res => res.json())
 .then(data => {
     console.log(data[0]);
      data.forEach(element => {
-        createComponent(element.market_cap_rank, element.name,Math.ceil(element.market_cap/1000000000), element.current_price, element.price_change_percentage_24h, element.image);
+        createComponent(element.market_cap_rank, element.name,Math.ceil(element.market_cap/1000000000), element.current_price,Math.floor(element.price_change_percentage_24h), element.image);
     });
 })
 .catch(err => console.log(err));

@@ -108,4 +108,7 @@ sub{
         width: 15px;
     
     }
+    .list-of-coins .item{
+        font-size: 0.8rem;
+    }
 }
