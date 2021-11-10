@@ -66,11 +66,13 @@ function rankColor(str) {
         return (parseFloat(str)).toLocaleString(undefined, {minimumFractionDigits: 1});
     }
     
-alert(strFormate(8888.888888888));
 
 }
+
+
+
 if (navigator.onLine) {
-    fetchData(url);
+    setInterval(fetchData(url), 1000);
 }else{
     alert("offline");
 }

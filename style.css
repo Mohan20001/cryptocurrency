@@ -60,6 +60,16 @@ body{
     color: black;
     
 }
+.cap, .price{
+    color: rgb(87, 86, 86);
+    font-weight: 100;
+    font-size: 12px;
+}
+.header .cap, .header .price{
+    color: white;
+    font-weight: bold;
+    font-size :1rem;
+}
 .list-of-coins .item div{
     position: relative;
     overflow: hidden;
@@ -78,6 +88,7 @@ body{
 sub{
     font-size: 0.5rem;
 }
+
 .list-of-coins .header{
     background-color: var(--secondery-color);
     color: var(--nutreal-color);
@@ -115,3 +126,4 @@ sub{
         font-size: 0.8rem;
     }
 }
+
