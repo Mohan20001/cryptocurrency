@@ -68,7 +68,7 @@ body{
 .header .cap, .header .price{
     color: white;
     font-weight: bold;
-    font-size :1rem;
+    font-size :0.9rem;
 }
 .list-of-coins .item div{
     position: relative;
