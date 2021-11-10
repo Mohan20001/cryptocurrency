@@ -42,7 +42,7 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
 
     let span=document.createElement('span');
     span.innerText=coinPercentage+"%";
-
+   rankColor(span)
     price.appendChild(span);
 
     item.appendChild(rank);
@@ -51,4 +51,11 @@ fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=mark
     item.appendChild(price);
 
     ls.appendChild(item);
+}
+
+
+function rankColor(str) {
+    if (str.innerText.includes("-")) {
+        str.style.color="red";
+    }
 }
