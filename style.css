@@ -5,10 +5,11 @@
     --desktop-device:1200px;
 
     /* colors */
-    --primery-color:#E6EDBA;
+    /* --primery-color:#E6EDBA; */
+    --primery-color:#e9e3e1;
     /* --primery-color:#fffefe; */
-    --secondery-color:#4B452D;
-    /* --secondery-color:#6c90b3; */
+    /* --secondery-color:#4B452D; */
+    --secondery-color:#5A2210;
     --nutreal-color:#fff;
     --info:#25C10B;
     --font:Roboto;
@@ -37,6 +38,7 @@ body{
     font-size: 2.5rem;
     margin-inline: auto;
     margin-bottom: 10px;
+    color: black;
 }
 .list-of-coins{
     display: grid;
@@ -48,13 +50,14 @@ body{
     height: 60px;
     background: var(--nutreal-color);
     color: var(--secondery-color);
-    margin-top: 4px;
+    margin-top: 2px;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: center;
     text-align: center;
     text-transform: capitalize;
-    color: var(--secondery-color);
+    /* color: var(--secondery-color);*/
+    color: black;
     
 }
 .list-of-coins .item div{
