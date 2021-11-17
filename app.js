@@ -73,7 +73,7 @@ function rankColor(str) {
 
 
 if (navigator.onLine) {
-    setInterval(fetchData(url), 1000);
+    fetchData(url);
 }else{
     alert("offline");
 }
