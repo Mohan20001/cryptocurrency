@@ -168,6 +168,39 @@ sub{
     margin-top: 30px;
 }
 
+.social-media{
+    position: absolute;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    /* background: red; */
+    margin-inline: auto;
+}
+.social-media i{
+    font-size: 30px;
+    color: white;
+}
+
+.social-media div{
+    transition: 0.1s ease-in;
+    color: white;
+    opacity: 0.5;
+    animation:media 1s 1 ease-in;
+}
+
+.social-media div:hover{
+    transform: scale(1.2);
+opacity: 1.0;
+}
+
+@keyframes media {
+    from{
+        bottom: 0;
+    }
+}
 /* media breaking points */
 
 @media (max-width:1024px) {
