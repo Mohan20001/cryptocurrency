@@ -148,6 +148,19 @@ sub{
     font-family: 'DM Sans', sans-serif;
 }
 
+.check{
+    padding:10px 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    border-radius: 4px;
+    color: #fff;
+    background: #1c2480;
+    border: none;
+    box-shadow: 4px 8px 10px rgba(3, 1, 43, 0.8);
+    margin-top: 2rem;
+    letter-spacing: 1px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
 
 
 /* media breaking points */
@@ -171,8 +184,18 @@ sub{
     }
 
     .hero-section div p{
-       max-width: 100vw;
-       margin: auto 1rem;
+       max-width: 90vw;
+       margin:5px auto;
+       font-size: 1rem;
+    }
+
+    .hero-section div{
+        margin-left: 0rem;
+    }
+    .check{
+        margin-left: 2rem;
+        margin-top: 10px;
+        z-index: 99;
     }
     
 }
@@ -209,6 +232,10 @@ sub{
     .hero-section div p{
         font-size: 1.1rem;
         text-justify:newspaper;
+    }
+    .check{
+        width: 200px;
+        margin-inline: auto;
     }
 }
 

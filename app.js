@@ -29,6 +29,7 @@ function fetchData(path) {
     
     let imag=document.createElement('img');
     imag.src=srcUrl;
+    // document.body.style.cursor="url('"+srcUrl +", pointer')";
     name.appendChild(imag);
 
     
