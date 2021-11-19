@@ -151,6 +151,7 @@ sub{
 
 }
 
+
 .check{
     padding:10px 20px;
     font-size: 1.2rem;
@@ -168,11 +169,21 @@ sub{
     margin-top: 30px;
 }
 
+.description, .title{
+    animation-name: anim;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
+}
+.description {
+    animation-delay: .3s;
+}
 .social-media{
     position: absolute;
     display: grid;
     grid-template-columns: repeat(4,1fr);
     bottom: 50px;
+    justify-content: center;
     left: 50%;
     transform: translateX(-50%);
     width: 200px;
@@ -185,21 +196,47 @@ sub{
 }
 
 .social-media div{
-    transition: 0.1s ease-in;
+    transition: 0.6s linear;
     color: white;
     opacity: 0.5;
-    animation:media 1s 1 ease-in;
+    animation-name: anim;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-iteration-count: 1;
 }
+
+.social-media div:nth-child(1){
+    animation-delay: 1s;
+}
+
+
+.social-media div:nth-child(2){
+    animation-delay: 1.5s;
+}
+
+
+.social-media div:nth-child(3){
+    animation-delay: 2s;
+}
+
+
+.social-media div:nth-child(4){
+    animation-delay: 2.5s;
+}
+
+
 
 .social-media div:hover{
     transform: scale(1.2);
 opacity: 1.0;
 }
 
-@keyframes media {
+@keyframes anim {
     from{
-        bottom: 0;
+        transform: translateY(200px);
+        opacity: 0;
     }
+   
 }
 /* media breaking points */
 
