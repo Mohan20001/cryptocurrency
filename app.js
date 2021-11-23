@@ -7,13 +7,13 @@ function fetchData(path) {
 .then(data => {
     console.log(data[0]);
      data.forEach(element => {
-        createComponent(element.market_cap_rank, element.name,strFormate(element.market_cap/1000000000), strFormate(element.current_price),strFormate(element.price_change_percentage_24h), element.image);
+        createComponent(element.market_cap_rank, element.name,strFormate(element.market_cap/1000000000), strFormate(element.current_price),strFormate(element.price_change_percentage_24h), element.image, element.id);
     });
 })
 .catch(err => console.log(err));
 
 
- function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl) {
+ function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl, coin_id) {
     let ls=document.querySelector('.list-of-coins');
     
     let item=document.createElement('div');
@@ -26,14 +26,13 @@ function fetchData(path) {
     let name=document.createElement('div');
     name.className="name";
     name.innerText=coinName;
+    name.setAttribute('id', coin_id)
     
     let imag=document.createElement('img');
     imag.src=srcUrl;
     // document.body.style.cursor="url('"+srcUrl +", pointer')";
     name.appendChild(imag);
 
-    
-    
     
     let mcap=document.createElement('div');
     mcap.className="cap";
@@ -54,6 +53,7 @@ function fetchData(path) {
     item.appendChild(price);
      
     ls.appendChild(item);
+    item.setAttribute('onclick', 'hello(this)');
 }
 
 
@@ -76,4 +76,23 @@ if (navigator.onLine) {
     fetchData(url);
 }else{
     alert("offline");
+}
+
+function hi(params) {
+    console.log('hi');
+}
+
+function hello(e) {
+    console.log(e.querySelector(".name").getAttribute('id'));
+    let c=e.querySelector(".name").getAttribute('id');
+    fetch(`https://api.coingecko.com/api/v3/coins/${c.toLowerCase()}?tickers=false&market_data=true&community_data=true&sparkline=true`)
+    .then(res => res.json()).then(data => console.log(data));
+}
+
+
+
+function coinIfo(coin_name) {
+    document.getElementById('btc').innerText=coin_name;
+
+    
 }

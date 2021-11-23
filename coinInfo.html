@@ -5,28 +5,97 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cryptocurrency</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
     <link rel="stylesheet" href="./coinInfo.css">
 </head>
 <body>
-    <div class="col">
-        <div class="child coin-img">
-            <div class="img">
-                <img src="./images/aug_(145).jpg" alt="coin">
-            </div>
-            <div class="coin-name">
-               <h1 class="btc">
-                   bitcoin
-               </h1> 
-                       <div class="coin-price">$56,271.00</div>
-                       <div class="coin-price">B1.00</div>
+<div class="board">
+    <div class="col coin-day">
+        <div class="coin-name">
+            <div>
+                <h2 id="btc" class="bitcoin">bitcoin(BTC)</h2>
+                <div class="btc-img">
+                   <div class="btc-symbol">
+                       <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="">
+                   </div>
+                   
+                   <div class="btc-p">
+                       <p>$50,000</p>
+                       <p>$50,000</p>
+                    </div>
                 </div>
+            </div>
+            <div>
+                <div>
+                    <div class="coin-line">
+                        <div><h3>Market cap</h3></div>
+                        <div>$56,000.00</div>
+                    </div>
+                    <div class="coin-line">
+                        <div><h3>24 Hour Trading Vol</h3></div>
+                        <div>$56,000.00</div>
+                    </div>
+                    <div class="coin-line">
+                        <div><h3>Fully Diluted Valuation</h3></div>
+                        <div>$56,000.00</div>
+                    </div>
+                </div>
+                
+            </div>
         </div>
-        <div class="child coin-rate-converter">
-            <form>
-                <input type="text" class="btc-price">
-                <input type="text" class="usd-price">
-            </form>
+        <div class="coin-convert">
+            <div class="con-icon"><i class="fas fa-exchange-alt"></i></div>
+            <div><label for="btc">BTC</label>
+                <input name="btc" type="text">
+            </div>
+            <div>
+                <label for="usd">USD</label>
+                <input name="usd" type="text">
+            </div>
         </div>
     </div>
+    <div class="col table">
+       <h2  class="btc-stats">BTC Price and Market Stats</h2>
+       <div class="coin-line">
+        <div><h3>Market Cap Rank</h3></div>
+        <div>$56,000.00</div>
+    </div>
+
+    <div class="coin-line">
+        <div><h3>BTC Price</h3></div>
+        <div>$56,000.00</div>
+    </div>
+
+    <div class="coin-line">
+        <div><h3>Market Cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+
+    <div class="coin-line">
+        <div><h3>Market cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+
+    <div class="coin-line">
+        <div><h3>Market cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+    <div class="coin-line">
+        <div><h3>Market cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+    <div class="coin-line">
+        <div><h3>Market cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+    <div class="coin-line">
+        <div><h3>Market cap</h3></div>
+        <div>$56,000.00</div>
+    </div>
+    </div>
+    <div id="graph" class="col graph">c</div>
+</div>
+
+<script src="./app.js"></script>
 </body>
 </html>
