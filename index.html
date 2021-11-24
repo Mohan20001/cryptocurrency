@@ -39,6 +39,7 @@
               <div class="price">PRICE<sub> 24h</sub></div>
           </div>
 
+<a href="#" target="_blank" rel="noopener noreferrer">
 
           <div class="item" onclick="hello(this)">
             <div class="rank" data-symbol="BTC">1</div>
@@ -49,20 +50,21 @@
             <div class="price">14.8 <span>+4.8%</span></div>
         </div>
 
+</a>
       </div>
     </div>
-        <div class="board">
+        <div id="board" class="board">
             <div class="col coin-day">
                 <div class="coin-name">
                     <div>
-                        <h2 id="btc" class="bitcoin">bitcoin(BTC)</h2>
+                        <h2 id="btc" class="bitcoin">bitcoin (<span id="c_symbol">BTC</span>)</h2>
                         <div class="btc-img">
                            <div class="btc-symbol">
-                               <img src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="">
+                               <img id="c-img" src="https://assets.coingecko.com/coins/images/1/large/bitcoin.png?1547033579" alt="">
                            </div>
                            
                            <div class="btc-p">
-                               <p>$50,000</p>
+                               <p id="c-price">$50,000</p>
                                <p>$50,000</p>
                             </div>
                         </div>
@@ -71,7 +73,7 @@
                         <div>
                             <div class="coin-line">
                                 <div><h3>Market cap</h3></div>
-                                <div>$56,000.00</div>
+                                <div id="c-mcap">$56,000.00</div>
                             </div>
                             <div class="coin-line">
                                 <div><h3>24 Hour Trading Vol</h3></div>
@@ -79,7 +81,7 @@
                             </div>
                             <div class="coin-line">
                                 <div><h3>Fully Diluted Valuation</h3></div>
-                                <div>$56,000.00</div>
+                                <div id="c-diluted">$56,000.00</div>
                             </div>
                         </div>
                         
@@ -99,40 +101,40 @@
             <div class="col table">
                <h2  class="btc-stats">BTC Price and Market Stats</h2>
                <div class="coin-line">
-                <div><h3>Market Cap Rank</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>MARKET CAP RANK</h3></div>
+                <div id="c-rank">$56,000.00</div>
             </div>
         
             <div class="coin-line">
-                <div><h3>BTC Price</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>MARKET CAP</h3></div>
+                <div id="c-mcap-c">$56,000.00</div>
             </div>
         
             <div class="coin-line">
-                <div><h3>Market Cap</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>FULLY DILUTED VALUATION</h3></div>
+                <div id="full-dileted-valua">$56,000.00</div>
             </div>
+<!--         
+            <div class="coin-line">
+                <div><h3>TREDING VALUE</h3></div>
+                <div id="c-trade">$56,000.00</div>
+            </div> -->
         
             <div class="coin-line">
-                <div><h3>Market cap</h3></div>
-                <div>$56,000.00</div>
-            </div>
-        
-            <div class="coin-line">
-                <div><h3>Market cap</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>24H HIGH</h3></div>
+                <div id="c-24h-high">$56,000.00</div>
             </div>
             <div class="coin-line">
-                <div><h3>Market cap</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>24H LOW</h3></div>
+                <div id="c-24h-low">$56,000.00</div>
             </div>
+            <!-- <div class="coin-line">
+                <div><h3>AVAILABLE SUPPLY</h3></div>
+                <div id="c-available-supply">$56,000.00</div>
+            </div> -->
             <div class="coin-line">
-                <div><h3>Market cap</h3></div>
-                <div>$56,000.00</div>
-            </div>
-            <div class="coin-line">
-                <div><h3>Market cap</h3></div>
-                <div>$56,000.00</div>
+                <div><h3>TOTAL SUPPLY</h3></div>
+                <div id="c-total-supply">$56,000.00</div>
             </div>
             </div>
             <div id="graph" class="col graph">c</div>

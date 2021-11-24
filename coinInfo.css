@@ -104,11 +104,16 @@ body{
         grid-template-columns: repeat(2,1fr);
         grid-template-rows: 1fr 1fr;
     }
+    .board{
+        font-size: 0.9rem;
+    }
 }
 @media (max-width:699px) {
     .board{
         grid-template-columns: 1fr;
+        font-size: 0.8rem;
     }
+
 }
 
 @media (max-width:480px) {
@@ -120,5 +125,8 @@ body{
     }
     .table{
         padding-inline: 10px;
+    }
+    .board{
+        font-size: 0.7rem;
     }
 }

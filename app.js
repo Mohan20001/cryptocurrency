@@ -16,6 +16,9 @@ function fetchData(path) {
  function createComponent(coinRank, coinName,coinMcap, coinPrice, coinPercentage, srcUrl, coin_id) {
     let ls=document.querySelector('.list-of-coins');
     
+    let a=document.createElement('a');
+    a.href="#board";
+
     let item=document.createElement('div');
     item.className="item";
     
@@ -52,7 +55,8 @@ function fetchData(path) {
     item.appendChild(mcap);
     item.appendChild(price);
      
-    ls.appendChild(item);
+    a.appendChild(item);
+    ls.appendChild(a);
     item.setAttribute('onclick', 'hello(this)');
 }
 
@@ -63,9 +67,6 @@ function rankColor(str) {
     }
     
 }
-    function strFormate(str) {
-        return (parseFloat(str)).toLocaleString(undefined, {minimumFractionDigits: 1});
-    }
     
 
 }
@@ -86,13 +87,36 @@ function hello(e) {
     console.log(e.querySelector(".name").getAttribute('id'));
     let c=e.querySelector(".name").getAttribute('id');
     fetch(`https://api.coingecko.com/api/v3/coins/${c.toLowerCase()}?tickers=false&market_data=true&community_data=true&sparkline=true`)
-    .then(res => res.json()).then(data => console.log(data));
+    .then(res => res.json()).then(data => {
+        console.log(data)
+        document.getElementById('btc').innerText=data.name +" ("+data.symbol+")";
+        document.getElementById('c-img').setAttribute('src', data.image.large);
+        document.getElementById('c-price').innerText= "$"+strFormate( data.market_data.current_price.usd);
+        document.getElementById('c-mcap').innerText="$"+strFormate( data.market_data.current_price.usd);
+        document.getElementById('c-diluted').innerText="$"+strFormate( data.market_data.fully_diluted_valuation.usd);
+
+        //full data
+        document.getElementById('c-rank').innerText= data.market_cap_rank;
+        document.getElementById('c-mcap-c').innerText="$"+strFormate( data.market_data.current_price.usd);
+        document.getElementById('full-dileted-valua').innerText="$"+strFormate( data.market_data.fully_diluted_valuation.usd);
+  //trade
+  document.getElementById('c-24h-high').innerText="$"+strFormate( data.market_data.high_24h.usd);
+  document.getElementById('c-24h-low').innerText="$"+strFormate( data.market_data.low_24h.usd);
+//available supply
+  document.getElementById('c-total-supply').innerText="$"+strFormate( data.market_data.total_supply);
+
+
+
+        
+
+    });
 }
-
-
 
 function coinIfo(coin_name) {
     document.getElementById('btc').innerText=coin_name;
-
-    
 }
+
+function strFormate(str) {
+    return (parseFloat(str)).toLocaleString(undefined, {minimumFractionDigits: 1});
+}
+
