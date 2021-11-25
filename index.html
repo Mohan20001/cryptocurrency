@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
    <link rel="stylesheet" href="style.css">
    <link rel="stylesheet" href="./coinInfo.css">
+   
+   <!-- graph cdn links -->
+   <script src="https://cdn.amcharts.com/lib/5/index.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/xy.js"></script>
+<script src="https://cdn.amcharts.com/lib/5/themes/Animated.js"></script>
+
 </head>
 <body>
     <div class="bg-img">
@@ -137,9 +143,11 @@
                 <div id="c-total-supply">$56,000.00</div>
             </div>
             </div>
-            <div id="graph" class="col graph">c</div>
+            <!-- <div  class="col graph"></div> -->
         </div>
+        <div id="chartdiv"></div>
         
-    <script defer src="app.js"></script>
+    <script src="app.js"></script>
+   
 </body>
 </html>
