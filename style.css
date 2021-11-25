@@ -155,6 +155,9 @@ sub{
 
 }
 
+.coin-line div:nth-child(2){
+    justify-self: end;
+}
 
 .check{
     padding:10px 20px;

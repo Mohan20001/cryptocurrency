@@ -14,6 +14,7 @@ body{
     display: grid;
     grid-gap: 1em;
     padding:1em;
+    margin-top: 2rem;
 }
 .board div{
     background: white;
@@ -102,7 +103,7 @@ body{
     }
     .board{
         grid-template-columns: repeat(2,1fr);
-        grid-template-rows: 1fr 1fr;
+        grid-template-rows: 1fr;
     }
     .board{
         font-size: 0.9rem;
