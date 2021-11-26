@@ -67,6 +67,10 @@ a{
     color: black;
     
 }
+
+.bg-img, .hero-section{
+    min-height: 500px;
+}
 .cap, .price{
     color: rgb(87, 86, 86);
     font-weight: 100;
@@ -157,6 +161,12 @@ sub{
 
 .coin-line div:nth-child(2){
     justify-self: end;
+    font-weight: 900;
+}
+.coin-line div:nth-child(1){
+    font-weight: 000;
+    color: #888888;
+    font-size: 0.8rem;
 }
 
 .check{
@@ -236,6 +246,12 @@ sub{
 .social-media div:hover{
     transform: scale(1.2);
 opacity: 1.0;
+}
+
+
+#c-per{
+    font-size: 0.9rem;
+    color: #25C10B;
 }
 
 @keyframes anim {

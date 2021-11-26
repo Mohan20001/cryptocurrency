@@ -60,13 +60,6 @@ function fetchData(path) {
     item.setAttribute('onclick', 'hello(this)');
 }
 
-
-function rankColor(str) {
-    if (str.innerText.includes("-")) {
-        str.style.color="red";
-    }
-    
-}
     
 
 }
@@ -83,10 +76,10 @@ function hi(params) {
     console.log('hi');
 }
 
-function hello(e) {
-    console.log(e.querySelector(".name").getAttribute('id'));
+async function hello(e) {
+    // console.log(e.querySelector(".name").getAttribute('id'));
     let c=e.querySelector(".name").getAttribute('id');
-    fetch(`https://api.coingecko.com/api/v3/coins/${c.toLowerCase()}?tickers=false&market_data=true&community_data=true&sparkline=true`)
+   await fetch(`https://api.coingecko.com/api/v3/coins/${c.toLowerCase()}?tickers=false&market_data=true&community_data=true&sparkline=true`)
     .then(res => res.json()).then(data => {
         console.log(data)
         document.getElementById('btc').innerText=data.name +" ("+data.symbol+")";
@@ -104,9 +97,15 @@ function hello(e) {
   document.getElementById('c-24h-low').innerText="$"+strFormate( data.market_data.low_24h.usd);
 //available supply
   document.getElementById('c-total-supply').innerText="$"+strFormate( data.market_data.total_supply);
-
+document.getElementById('c-stat').innerText=data.symbol.toUpperCase();
+let c_per=document.getElementById('c-per');
+c_per.innerText=data.market_data.price_change_percentage_24h+" % ";
+rankColor(c_per);
 
 // drawGraph();
+for (let index = 0; index < data.market_data.sparkline_7d.price.length; index++) {
+  labels.push('');
+}
 drawChart(data.market_data.sparkline_7d.price,labels);
 
         
@@ -127,34 +126,19 @@ function strFormate(str) {
 
 
 //setup
-const labels = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'june',
-  'july',
-  'september',
-  'octomber',
-  'navamber',
-  'december'
-  
-  
-];
+const labels = [];
 
 
 
 
 
-function drawChart(dataArray, nameLabels) {
+async function drawChart(dataArray, nameLabels) {
   
-  
-  
+
 const data = {
   labels: nameLabels,
   datasets: [{
-    label: 'My First dataset',
+    label: '7days history',
     backgroundColor: '#0066cc',
     borderColor: '#0066cc',
     //data: [500, 10, 5, 2, 20, 3000, 45,300,600.89],
@@ -167,18 +151,20 @@ const config = {
   type: 'line',
   data: data,
   options: {
+    legend: false,
+    interaction: {
+      intersect: false,
+      mode: 'index',
+    },
     plugins: {
-     
+
       title: {
-        display: true,
-        text: '7Days price',
-        padding: {
-          top: 30,
-          bottom: 30
-      }
+        display: false,
+        text: (ctx) => 'Tooltip position mode: ' + ctx.chart.options.plugins.tooltip.position,
+      },
     }
   }
-  }
+  
 };
 
 // canv.clear();
@@ -190,3 +176,11 @@ const myChart = new Chart(
   );
 }
 
+function rankColor(str) {
+  if (str.innerText.includes("-")) {
+      str.style.color="red";
+  }else{
+    str.style.color="#25C10B";
+  }
+  
+}

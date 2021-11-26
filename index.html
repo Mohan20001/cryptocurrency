@@ -48,7 +48,7 @@
               <div class="price">PRICE<sub> 24h</sub></div>
           </div>
 
-<a href="#" target="_blank" rel="noopener noreferrer">
+<!-- <a href="#" target="_blank" rel="noopener noreferrer">
 
           <div class="item" onclick="hello(this)">
             <div class="rank" data-symbol="BTC">1</div>
@@ -59,7 +59,7 @@
             <div class="price">14.8 <span>+4.8%</span></div>
         </div>
 
-</a>
+</a> -->
       </div>
     </div>
         <div id="board" class="board">
@@ -74,7 +74,7 @@
                            
                            <div class="btc-p">
                                <p id="c-price">$50,000</p>
-                               <p>$50,000</p>
+                               <p id="c-per">$50,000</p>
                             </div>
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                 </div>
             </div>
             <div class="col table">
-               <h2  class="btc-stats">BTC Price and Market Stats</h2>
+               <h2  class="btc-stats"><span id="c-stat">Btc</span> Price and Market Stats</h2>
                <div class="coin-line">
                 <div><h3>MARKET CAP RANK</h3></div>
                 <div id="c-rank">$56,000.00</div>
@@ -152,7 +152,7 @@
         
         <div>
             <canvas id="myChart"></canvas>
-          </div>
+         </div>
         
     <script src="app.js"></script>
    
