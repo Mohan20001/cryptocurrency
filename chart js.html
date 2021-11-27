@@ -16,6 +16,37 @@
 
       <script>
 
+function unixConverter(timeStamp) {
+
+  let unixStamp= parseInt(timeStamp) * 1000;
+
+  let date =new Date(unixStamp);
+
+  return date.toLocaleTimeString();
+  
+}
+
+unixConverter(1637937230060);
+
+
+
+function responsiveDayChat(coin, days=7) {
+  
+  
+  fetch(`https://api.coingecko.com/api/v3/coins/${coin.toLowerCase()}/market_chart?vs_currency=usd&days=${days}`).then(res=>res.json())
+  .then(data=>{
+    
+    let d=data.prices.map(el=>el[0]);
+    
+    drawChart(data.prices.map(el=>el[1]), data.prices.map(el=>el[0]));
+    console.log(d);
+    
+  });
+}
+
+
+responsiveDayChat('bitcoin', 7);
+
 
 //setup
 const labels = [
@@ -33,13 +64,16 @@ const labels = [
   
   
 ];
-const data = {
-  labels: labels,
+
+function drawChart(dataValue, labelName) {
+  
+  const data = {
+    labels: labelName,
   datasets: [{
-    label: 'My First dataset',
+    label: 'price value',
     backgroundColor: 'rgb(255, 99, 132)',
     borderColor: 'rgb(255, 99, 132)',
-    data: [0, 10, 5, 2, 20, 30, 45],
+    data:dataValue,
   }]
 };
 
@@ -50,13 +84,14 @@ const config = {
   options: {}
 };
 
-        // === include 'setup' then 'config' above ===
-      
-        const myChart = new Chart(
-          document.getElementById('myChart'),
-          config
-        );
-      </script>
-      
+// === include 'setup' then 'config' above ===
+
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+  );
+  
+}
+  </script>
 </body>
 </html>

@@ -75,8 +75,9 @@ if (navigator.onLine) {
 function hi(params) {
     console.log('hi');
 }
-
 async function hello(e) {
+  document.getElementById('myChart').style.display="block";
+  document.querySelector('.board').style.display="grid";
     // console.log(e.querySelector(".name").getAttribute('id'));
     let c=e.querySelector(".name").getAttribute('id');
    await fetch(`https://api.coingecko.com/api/v3/coins/${c.toLowerCase()}?tickers=false&market_data=true&community_data=true&sparkline=true`)
@@ -87,6 +88,8 @@ async function hello(e) {
         document.getElementById('c-price').innerText= "$"+strFormate( data.market_data.current_price.usd);
         document.getElementById('c-mcap').innerText="$"+strFormate( data.market_data.current_price.usd);
         document.getElementById('c-diluted').innerText="$"+strFormate( data.market_data.fully_diluted_valuation.usd);
+        document.getElementById('c-label').innerText=data.symbol.toUpperCase();
+
 
         //full data
         document.getElementById('c-rank').innerText= data.market_cap_rank;
@@ -102,14 +105,33 @@ let c_per=document.getElementById('c-per');
 c_per.innerText=data.market_data.price_change_percentage_24h+" % ";
 rankColor(c_per);
 
-// drawGraph();
-for (let index = 0; index < data.market_data.sparkline_7d.price.length; index++) {
-  labels.push('');
+let inpt1=document.getElementById('convert-coin-price');
+
+let inpt2=document.getElementById('converted-price');
+
+inpt1.onkeyup=()=>{
+  if(inpt1.value != ""){
+  inpt2.value=parseFloat(inpt1.value)*parseFloat(data.market_data.current_price.usd);
+  }
 }
-drawChart(data.market_data.sparkline_7d.price,labels);
+
+
+inpt2.onkeyup=()=>{
+  if(inpt2.value != ""){
+  inpt1.value=parseFloat(inpt2.value)/parseFloat(data.market_data.current_price.usd);
+  }
+}
+
+// drawGraph();
+// for (let index = 0; index < data.market_data.sparkline_7d.price.length; index++) {
+//   labels.push('');
+// }
+// drawChart(data.market_data.sparkline_7d.price,labels);
+responsiveDayChat(data.id, 1);
+
 
         
-
+// console.log(data.market_data.sparkline_7d.price);
     });
 }
 
@@ -129,7 +151,19 @@ function strFormate(str) {
 const labels = [];
 
 
-
+function responsiveDayChat(coin, days=7) {
+  
+  
+  fetch(`https://api.coingecko.com/api/v3/coins/${coin.toLowerCase()}/market_chart?vs_currency=usd&days=${days}`).then(res=>res.json())
+  .then(data=>{
+    
+    let d=data.prices.map(el=>el[0]);
+    
+    drawChart(data.prices.map(el=>el[1]), data.prices.map(el=>el[0]));
+    // console.log(d);
+    
+  });
+}
 
 
 async function drawChart(dataArray, nameLabels) {
@@ -138,7 +172,7 @@ async function drawChart(dataArray, nameLabels) {
 const data = {
   labels: nameLabels,
   datasets: [{
-    label: '7days history',
+    label: 'Today price Flow',
     backgroundColor: '#0066cc',
     borderColor: '#0066cc',
     //data: [500, 10, 5, 2, 20, 3000, 45,300,600.89],
