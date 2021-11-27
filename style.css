@@ -79,6 +79,7 @@ a{
     color: #888888;
     word-wrap: break-word;
     line-height: 30px;
+    display: none;
 }
 .c-d h1{
     color: rgb(49, 49, 49);

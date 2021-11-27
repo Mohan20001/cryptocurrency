@@ -91,7 +91,9 @@ async function hello(e) {
         document.getElementById('c-label').innerText=data.symbol.toUpperCase();
         document.getElementById('ath').innerText="$"+strFormate( data.market_data.ath.usd);
         document.getElementById('c-ath-change-per').innerText=data.market_data.ath_change_percentage.usd+" % "
-        document.getElementById('c-d').innerText=data.description.en;
+        let des=document.getElementById('c-d');
+        des.style.display="block";
+        des.innerText=data.description.en;
         
 
         //full data
