@@ -89,7 +89,7 @@ async function hello(e) {
         document.getElementById('c-mcap').innerText="$"+strFormate( data.market_data.current_price.usd);
         document.getElementById('c-diluted').innerText="$"+strFormate( data.market_data.fully_diluted_valuation.usd);
         document.getElementById('c-label').innerText=data.symbol.toUpperCase();
-        document.getElementById('ath').innerText="$"+strFormate( data.market_data.ath.usd)
+        document.getElementById('ath').innerText="$"+strFormate( data.market_data.ath.usd);
         document.getElementById('c-ath-change-per').innerText=data.market_data.ath_change_percentage.usd+" % "
 
 
