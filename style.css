@@ -68,6 +68,22 @@ a{
     
 }
 
+.c-d{
+    background: #fff;
+    max-width: 80rem;
+    padding: 2rem;
+    margin: 1rem auto;
+    margin-inline: auto;
+    border-radius: 10px;
+    font-size: calc(15px + 0.4vw);
+    color: #888888;
+    word-wrap: break-word;
+}
+.c-d h1{
+    color: rgb(49, 49, 49);
+    margin-bottom: 1.3rem;
+}
+
 .bg-img, .hero-section{
     min-height: 500px;
 }
@@ -279,6 +295,10 @@ opacity: 1.0;
         height: 18px;
         width: 18px;
     
+    }
+
+    .c-d{
+        padding: 1rem;
     }
 
     .hero-section div p{
