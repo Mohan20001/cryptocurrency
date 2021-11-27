@@ -78,6 +78,7 @@ a{
     font-size: calc(15px + 0.4vw);
     color: #888888;
     word-wrap: break-word;
+    line-height: 30px;
 }
 .c-d h1{
     color: rgb(49, 49, 49);
