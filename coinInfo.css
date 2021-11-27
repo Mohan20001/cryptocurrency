@@ -14,7 +14,7 @@ body{
     display: grid;
     grid-gap: 1em;
     padding:1em;
-    padding: 4rem 1rem;
+    padding: 3rem 1rem;
     margin-top: 2px;
     display: none;
 }
